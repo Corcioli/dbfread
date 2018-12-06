@@ -323,6 +323,12 @@ class DBF(object):
                 else:
                     skip_record(infile)
 
+    def pop():
+        if self.loaded:
+            return self._records.pop()
+
+        return None
+
     def __iter__(self):
         if self.loaded:
             return list.__iter__(self._records)
